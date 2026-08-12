@@ -54,6 +54,8 @@ docker run --rm -v "$PWD:/src" -w /src -e INPUT_DIRECTORY=./ anishathalye/proof-
 
   ⚠️ 由于 CSS 校验已开启，新增 vendor 前缀属性（现有 `-webkit-background-clip`、`-webkit-text-fill-color` 等）时留意 Nu 验证器是否报错。favicon 检查默认开启，`index.html` 的 `<link rel="icon">` 不要删。
 
+  `ignore_url_re` 里跳过了 `space.bilibili.com` 和 `linux.do`——这两个站点对 CI runner 的 IP 做反爬拦截（分别返回 412 和 429），链接有效但重试三次也过不了。GitHub 自身偶发 503，靠 v2 的重试自愈，不需要加白名单。
+
 - **`.github/workflows/auto-assign.yml`** — 新开的 issue 和 PR 一律自动指派给 `ItzPlana`。
 
 ## 已知陷阱

@@ -10,3 +10,8 @@ jobs:
       - uses: anishathalye/proof-html@v2.2.5
         with:
           directory: ./
+          # 这两个站点对 CI runner 的 IP 做反爬拦截(bilibili 返回 412、
+          # linux.do 返回 429),链接本身有效但重试也无法通过,故跳过校验。
+          ignore_url_re: |
+            ^https://space\.bilibili\.com/
+            ^https://linux\.do/

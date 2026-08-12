@@ -27,7 +27,7 @@ python3 -m http.server 8000
 
 ## 自动化检查
 
-每次 push 都会触发 [Proof HTML](.github/workflows/proof-html.yml)，用 W3C Nu 验证器校验 HTML 与 CSS，并通过 HTMLProofer 检查图片路径、内部锚点、favicon 以及所有外部链接的可达性（失败自动重试 3 次）。
+每次 push 都会触发 [Proof HTML](.github/workflows/proof-html.yml)，用 W3C Nu 验证器校验 HTML 与 CSS，并通过 HTMLProofer 检查图片路径、内部锚点、favicon 以及所有外部链接的可达性（失败自动重试 3 次）。bilibili 与 linux.do 因对 CI 出口 IP 做反爬拦截而被列入跳过名单。
 
 本地复现同一套检查（需要 Docker）：
 
